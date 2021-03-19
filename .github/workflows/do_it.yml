@@ -19,5 +19,5 @@ jobs:
           echo "Branch: ${DOTENVFILE}"
           cp -rf "./web-atlas-ts/.env.${DOTENVFILE}.sample" ./web-atlas-ts/.env
         env:
-          DOTENVFILE: "${{ github.ref }} === 'refs/heads/main' ? 'production' : 'staging'"
+          DOTENVFILE: "${{ github.ref }} === 'refs/heads/main' && 'production' || 'staging'"
 
