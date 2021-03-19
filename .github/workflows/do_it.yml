@@ -1,0 +1,19 @@
+name: Experiment1
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build-web-atlas-job:
+    runs-on: ubuntu-latest
+    name: Building
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build & Compilation
+        run: |
+          echo "Branch: ${GITHUB_REF##*/}"
+          cp -rf "./web-atlas-ts/.env.${GITHUB_REF##*/}.sample" ./web-atlas-ts/.env
+
