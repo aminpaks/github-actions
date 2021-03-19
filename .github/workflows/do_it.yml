@@ -17,7 +17,6 @@ jobs:
       - name: Build & Compilation
         run: |
           echo "Branch: ${DOTENVFILE}"
-          cp -rf "./web-atlas-ts/.env.${DOTENVFILE}.sample" ./web-atlas-ts/.env
         env:
           DOTENVFILE: "${{ github.ref }} === 'refs/heads/main' && 'production' || 'staging'"
 
