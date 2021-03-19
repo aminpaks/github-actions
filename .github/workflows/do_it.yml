@@ -1,8 +1,10 @@
 name: Experiment1
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches:
+      - "main"
+      - "staging"
 
 jobs:
   build-web-atlas-job:
